@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+body{
+    height: 100%;
+}
+
+.main-container{
+    height: 100vh;
+    width: 100%;
+    max-width: 35rem ;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-handler{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 6rem;
+    gap:1rem;
+    padding-top: 2.5rem;
+    height: 3rem;
+}
+
+.form-select{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.form-submit{
+    outline: none;
+    border: 1px solid rgb(232, 232, 232);;
+    background-color: white;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.form-submit:focus {
+    box-shadow: 0 0 0 0.5px rgb(153, 153, 153);
+  }
+
+ .cards{
+    display: flex;
+    margin: 2rem 0;
+    width: 100%;
+ }
+
+ .card-item{
+    width: 100%;
+    padding: 0.3rem 1.2rem 1.2rem;
+    border: 1px solid rgb(232, 232, 232);
+    background-color: white;
+    border-radius:0.3rem;
+}
+
+.card-activity{
+    line-height: 1.2;
+    margin-top: 1rem;
+}
+
+.card-info{
+    margin-top: 2.2rem;
+    display: flex;
+    justify-content: space-between;
+}
