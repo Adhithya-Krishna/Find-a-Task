@@ -72,3 +72,8 @@ body{
     display: flex;
     justify-content: space-between;
 }
+
+.tag-error{
+    width: 100%;
+    text-align: center;
+}

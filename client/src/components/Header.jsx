@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import options from "../assets/options"
 import axios from "axios"
 
-function Header() {
+function Header({ setRandom }) {
     const [data, setData] = useState({})
     const [selectedType, setSelectedType] = useState('')
     const [selectedParticipant, setSelectedParticipant] = useState('')
@@ -32,7 +32,7 @@ function Header() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await axios.post('http://localhost:3001/', { type: selectedType, participants: selectedParticipant })
-        console.log(response.data);
+        setRandom(response.data);
     }
 
     return (

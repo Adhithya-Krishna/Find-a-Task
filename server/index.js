@@ -8,24 +8,33 @@ const port = 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
-// let data = "";
-
 app.get("/", async (req, res) => {
-  const response = await axios.get("https://bored-api.appbrewery.com/random");
-  res.send(response.data);
+  try {
+    const response = await axios.get("https://bored-api.appbrewery.com/random");
+    res.send(response.data);
+  } catch (error) {
+    let responseData = {
+      activity: "Go to the gym",
+      type: "education",
+      participants: 1,
+    };
+    console.log("khdkhasdkhkj" + error);
+    res.send(responseData);
+  }
 });
 
 app.post("/", async (req, res) => {
   try {
     const { type, participants } = req.body;
+
     const response = await axios.get(
       `https://bored-api.appbrewery.com/filter?type=${type}&participants=${participants}`
     );
     const results = response.data;
-    const randomData = results[Math.floor(Math.random() * results.length)];
-    res.send(randomData);
+    const randomResult = results[Math.floor(Math.random() * results.length)];
+    res.send(randomResult);
   } catch (error) {
-    console.log(error);
+    res.send(error.response.data);
   }
 });
 
